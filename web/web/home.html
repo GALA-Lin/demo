@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>地质工程甜点预测 - 用户中心</title>
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="shortcut icon " type="images/x-icon" href="./img/qrcode.png">
+    <script src="./js/home.js"></script>
+</head>
+
+<body>
+    <div class="nav-container">
+        <div class="header">
+            <a href="./home.html"><img src="./img/logo.png" alt="None" width="100px" height="100px"
+                    style="float: left;margin-top: 10px;margin-right: 10px;"></a>
+            <h1 style="font: 36px 'kaiti';display: inline;"><a href="./home.html" target="_self">地质工程甜点预测</a></h1>
+        </div>
+        <div class="nav">
+            <nav>
+                <ul>
+                    <li><a href="./index.html">首页</a></li>
+                    <li><a href="#">预测工程甜品</a></li>
+                    <li><a href="./home.html" onclick="showContent('user-info')">用户信息</a></li>
+                    <li><a href="./TeamInfo.html" target="_blank">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+        <br>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#" onclick="showContent('user-info')">个人信息</a></li>
+                <li><a href="#" onclick="showContent('changpsw')">修改密码</a></li>
+                <li><a href="#" onclick="showContent('recharge-form')">充值入口</a></li>
+                <li><a href="#" onclick="showContent('file-manager')">工程文件管理</a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div id="user-info" class="user-info">
+                <h2>个人信息</h2>
+                <label>所属公司:</label> 地质工程甜点预测公司<br>
+                <label>工程队名:</label> 甜点预测队<br>
+                <label>用户密码:</label> <input id="password" type="password" value="123456" readonly><br>
+                <label>联系邮箱:</label> 202301@.toc.com<br>
+                <label>联系电话:</label> 1234567890<br>
+                <label>权限:</label> 普通用户/VIP<br>
+            </div>
+                <div id="changpsw" class="user-info">
+            <h2>修改密码</h2>
+            <form id="passwordForm">
+                <label for="username">用户名:</label>
+                <input type="text" id="username" name="username">
+                <label for="currentPassword">当前密码:</label>
+                <input type="password" id="currentPassword" name="currentPassword">
+                <label for="newPassword">新密码:</label>
+                <input type="password" id="newPassword" name="newPassword">
+                <button type="button" onclick="modifyPassword()">修改密码</button>
+            </form>
+        </div>
+        </div>
+        
+
+        <!-- <script>
+            function modifyPassword() {
+                var username = document.getElementById('username').value;
+                var currentPassword = document.getElementById('currentPassword').value;
+                var newPassword = document.getElementById('newPassword').value;
+
+                var data = {
+                    username: username,
+                    currentPassword: currentPassword,
+                    newPassword: newPassword
+                };
+
+                // 发送HTTP请求以更新用户密码
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/updatePassword', true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send(JSON.stringify(data));
+
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        alert('密码修改成功！');
+                    } else {
+                        alert('密码修改失败。');
+                    }
+                };
+            }
+        </script> -->
+    </div>
+</body>
+
+</html>
